@@ -1,0 +1,61 @@
+-- local icons = require("qrdean.icons")
+-- local borders = icons.borders
+-- local arrows = icons.arrows
+--
+-- require('nvim-tree').setup({
+--   renderer = {
+--     indent_markers = {
+--       enable = true,
+--       inline_arrows = true,
+--       icons = {
+--         corner = borders.BottmLeftCorner,
+--         edge = borders.VerticalEdge,
+--         item = borders.TeeRight,
+--         bottom = borders.HorizontalEdge,
+--         none = " ",
+--       }
+--     },
+--     icons = {
+--       web_devicons = {
+--         file = {
+--           enable = false,
+--           color = true,
+--         },
+--         folder = {
+--           enable = false,
+--           color = true,
+--         }
+--       },
+--       show = {
+--         file = false,
+--         folder = true,
+--         folder_arrow = false,
+--         git = true,
+--         modified = true,
+--         diagnostics = false,
+--         -- bookmarks = false,
+--       },
+--       glyphs = {
+--         folder = {
+--           arrow_closed = arrows.Left,
+--           arrow_open = arrows.Down,
+--           default = arrows.Left,
+--           open = arrows.Down,
+--           empty = arrows.OpenLeft,
+--           empty_open = arrows.OpenDown,
+--         },
+--         git = {
+--           unstaged = "U",
+--           staged = "S",
+--           unmerged = "",
+--           renamed = "R",
+--           untracked = "O",
+--           deleted = "D"
+--         }
+--       }
+--     }
+--   }
+-- })
+
+-- local opts = { noremap = true }
+-- vim.keymap.set("n", "<leader>t", '<cmd> NvimTreeToggle<cr>', opts)
