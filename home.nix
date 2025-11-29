@@ -15,6 +15,9 @@ in
     shellAliases = {
       hey = "echo hey there";
     };
+    initContent = ''
+      eval "$(starship init zsh)"
+      '';
   };
 
   programs.git = {
@@ -25,6 +28,10 @@ in
       init.defaultBranch = "main";
       pull.rebase = true;
     };
+  };
+
+  programs.starship = {
+    enable = true;
   };
 
   xdg.configFile."nvim" = {

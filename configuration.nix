@@ -74,11 +74,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.qdean = {
     isNormalUser = true;
     description = "qdean";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
       kdePackages.xdg-desktop-portal-kde
