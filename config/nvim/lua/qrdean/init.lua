@@ -3,7 +3,12 @@ require("qrdean.remap")
 require("lazy-plugins")
 
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-require("mason").setup()
+require("mason").setup({
+  registries = {
+    "github:mason-org/mason-registry",
+    "github:Crashdummyy/mason-registry",
+  },
+})
 require("mason-lspconfig").setup()
 
 -- vim.g.godot_executable = '/Applications/Godot.app'

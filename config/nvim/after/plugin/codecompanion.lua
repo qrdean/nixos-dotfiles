@@ -1,0 +1,31 @@
+-- require("codecompanion").setup({
+--   opts = { send_code = false },
+--   strategies = {
+--     chat = {
+--       adapter = "copilot",
+--       slash_commands = {
+--         codebase = require("vectorcode.integrations").codecompanion.chat.make_slash_command()
+--       },
+--       tools = {
+--         vectorcode = {
+--           description = "Run VectorCode to retrieve the project context.",
+--           callback = require("vectorcode.integrations").codecompanion.chat.make_tool(),
+--         },
+--       },
+--     },
+--     inline = {
+--       adapter = "copilot",
+--     },
+--   },
+--   display = {
+--     action_palette = {
+--       provider = "telescope",
+--     },
+--     chat = {
+--       window = {
+--         layout = "vertical",
+--         position = "right"
+--       }
+--     },
+--   },
+-- })

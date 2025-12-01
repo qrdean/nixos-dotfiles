@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "vimdoc", "python", "bash", "javascript", "go", "java", "typescript", "lua", "rust", "gdscript", "godot_resource", "nix"},
+  ensure_installed = { "vimdoc", "python", "bash", "javascript", "go", "java", "typescript", "lua", "rust", "gdscript", "godot_resource", "slint", "c_sharp", "odin", "zig", "markdown", "c", "cpp" },
 
   highlight = {
     enable = true,

@@ -37,40 +37,6 @@
 --   end, bufopts)
 -- end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-
-vim.diagnostic.config({ jump = { float = true } })
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(event)
-    local bufmap = function(mode, rhs, lhs)
-      vim.keymap.set(mode, rhs, lhs, { buffer = event.buf })
-    end
-
-    -- bufmap('n', '[d', vim.diagnostic.get_next)
-    -- bufmap('n', ']d', vim.diagnostic.get_prev)
-    bufmap('n', 'gD', vim.lsp.buf.declaration)
-    bufmap('n', 'gd', vim.lsp.buf.definition)
-    bufmap('n', 'K', vim.lsp.buf.hover)
-    bufmap('n', 'gi', vim.lsp.buf.implementation)
-    bufmap('n', '<C-k>', vim.lsp.buf.signature_help)
-    bufmap('n', '<space>D', vim.lsp.buf.type_definition)
-    bufmap('n', '<space>rn', vim.lsp.buf.rename)
-    bufmap({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action)
-    bufmap('n', 'gr', vim.lsp.buf.references)
-    bufmap('n', '<space>f', function()
-      vim.lsp.buf.format { async = true }
-    end)
-    bufmap('n', '<space>ih', function()
-      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
-    end)
-  end,
-})
-
-
 -- require('lspconfig')['lua_ls'].setup {
 --   on_attach = on_attach,
 --   settings = {
@@ -92,29 +58,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 --   }
 -- }
 
-vim.lsp.config('lua_ls', {
-  -- on_attach = on_attach,
-  settings = {
-    Lua = {
-      workspace = {
-        checkThirdParty = false,
-        telemetry = { enable = false },
-        library = {
-          "${3rd}/love2d/library"
-        }
-      },
-      diagnostics = {
-        globals = { 'vim' }
-      },
-      hint = {
-        enable = true
-      }
-    }
-  }
-})
-vim.lsp.enable({ "lua_ls" })
-
-
 -- require('lspconfig')['gopls'].setup {
 --   cmd = { "gopls", "serve" },
 --   on_attach = on_attach,
@@ -130,22 +73,6 @@ vim.lsp.enable({ "lua_ls" })
 --     }
 --   }
 -- }
-
-vim.lsp.config('gopls', {
-  cmd = { "gopls", "serve" },
-  settings = {
-    gopls = {
-      analyses = {
-        unusedparams = true
-      },
-      staticcheck = true,
-      hints = {
-        parameterNames = true
-      }
-    }
-  }
-})
-vim.lsp.enable('gopls')
 
 -- require('lspconfig')['rust_analyzer'].setup {
 --   on_attach = on_attach,
@@ -170,49 +97,20 @@ vim.lsp.enable('gopls')
 --   }
 -- }
 
-vim.lsp.config('rust_analyzer', {
-  flags = lsp_flags,
-  settings = {
-    ["rust_analyzer"] = {
-      imports = {
-        granularity = {
-          group = "module",
-        },
-        prefix = "self",
-      },
-      cargo = {
-        buildScripts = {
-          enable = true,
-        },
-      },
-      procMacro = {
-        enable = true,
-      },
-    }
-  }
-})
-vim.lsp.enable('rust_analyzer')
-
-
 -- local port = os.getenv 'GDScript_Port' or '6005'
 -- local cmd = vim.lsp.rpc.connect('127.0.0.1', port)
 -- require('lspconfig').gdscript.setup {
 --   on_attach = on_attach,
---   -- settings = {
---   --   cmd = cmd,
---   --   filetypes = { 'gd', 'gdscript', 'gdscript3' },
---   --   root_dir = util.root_pattern('project.godot', '.git'),
---   -- },
+-- settings = {
+--   cmd = cmd,
+--   filetypes = { 'gd', 'gdscript', 'gdscript3' },
+--   root_dir = util.root_pattern('project.godot', '.git'),
+-- },
 -- }
-
-vim.lsp.config('gdscript', {})
-vim.lsp.enable('gdscript')
 
 -- require('lspconfig').clangd.setup {
 --   on_attach = on_attach,
 -- }
-vim.lsp.config('clangd', {})
-vim.lsp.enable('clangd')
 
 -- require('lspconfig').pyright.setup{
 --   on_attach = on_attach,
@@ -226,8 +124,6 @@ vim.lsp.enable('clangd')
 -- require('lspconfig').roslyn.setup {
 --   on_attach = on_attach,
 -- }
-vim.lsp.config('roslyn', {})
-vim.lsp.enable('roslyn')
 
 -- local omnisharp_extended = require("omnisharp_extended")
 -- local omnisharp_handlers = {
@@ -251,17 +147,6 @@ vim.lsp.enable('roslyn')
 --   on_attach = on_attach,
 -- }
 
-vim.lsp.config('ols', {})
-vim.lsp.enable('ols')
-
 -- require('lspconfig').zls.setup {
 --   on_attach = on_attach,
 -- }
-
-vim.lsp.config('zls', {})
-vim.lsp.enable('ols')
-
-vim.lsp.enable('jdtls')
-
-vim.lsp.config('elixirls', {})
-vim.lsp.enable('elixirls')

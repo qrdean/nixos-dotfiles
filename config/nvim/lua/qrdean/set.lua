@@ -24,7 +24,9 @@ vim.opt.autoindent=true
 vim.opt.mouse="a"
 vim.opt.colorcolumn="80"
 vim.opt.signcolumn="yes"
-
+-- vim.opt.foldmethod="expr"
+-- vim.opt.foldexpr="v:lua.vim.treesitter.foldexpr()"
+-- vim.opt.foldtext=""
 
 vim.opt.termguicolors = true
 

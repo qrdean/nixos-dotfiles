@@ -1,6 +1,7 @@
 vim.keymap.set("n", "<leader>zz", function()
   require("zen-mode").setup({
     window = {
+      backdrop = 0.95,
       width = 180,
       height = 1,
       options = {
