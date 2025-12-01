@@ -106,9 +106,9 @@
   # hardware.xone.enable = true;
   # hardware.xpad-noone.enable = true;
 
-  # programs.steam.enable = true;
-  # programs.steam.gamescopeSession.enable = true;
-  # programs.gamemode.enable = true;
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -119,25 +119,25 @@
     ghostty
 
     ## gaming ##
-    # mangohud
-    # goverlay
-    # lact
-    # wlroots
-    # protonup
-    # protontricks
+    mangohud
+    goverlay
+    lact
+    wlroots
+    protonup-ng
+    protontricks
     # steamtinkerlauncher
-    # umu-launcher
-    # wine-staging
-    # winetricks
-    # lutris
+    umu-launcher
+    wine-staging
+    winetricks
+    lutris
     xdg-desktop-portal
   ];
 
   # protonup steam compat tools
-  # environment.sessionVariables = {
-  #   STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
-  #     "\${HOME}/.steam/root/compatibilitytools.d";
-  # };
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
+      "\${HOME}/.steam/root/compatibilitytools.d";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
