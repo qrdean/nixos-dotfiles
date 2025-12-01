@@ -41,19 +41,19 @@ in
 
   home.packages = with pkgs; [
     neovim
-    fzf
+    # fzf
     ripgrep
-    nil
-    nixpkgs-fmt
+    # nil
+    # nixpkgs-fmt
     nodejs
     clang
     go
 
     # Language Servers
-    lua-language-server
-    gopls
+    # lua-language-server
+    # gopls
 
-    fastfetch
+    # fastfetch
   ];
 
   # protonup steam compat tools

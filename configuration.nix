@@ -84,7 +84,7 @@
     packages = with pkgs; [
       kdePackages.kate
       kdePackages.xdg-desktop-portal-kde
-      aseprite
+      # aseprite
     ];
   };
 
@@ -103,8 +103,8 @@
   # };
   #
   # services.xserver.videoDrivers = ["amdgpu"];
-  hardware.xone.enable = true;
-  hardware.xpad-noone.enable = true;
+  # hardware.xone.enable = true;
+  # hardware.xpad-noone.enable = true;
 
   # programs.steam.enable = true;
   # programs.steam.gamescopeSession.enable = true;
