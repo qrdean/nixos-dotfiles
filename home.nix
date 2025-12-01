@@ -22,7 +22,7 @@ in
 
   programs.git = {
     enable = true;
-    extraConfig ={
+    settings ={
       user.email = "dean.quinton@ymail.com";
       user.name = "quinton dean";
       init.defaultBranch = "main";
