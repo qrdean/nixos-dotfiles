@@ -11,7 +11,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   version = "2.0";
 
   src = requireFile rec {
-    name = "${finalAttrs.pname}-${variant}-${finalAttrs.version}.zip";
+    name = "${finalAttrs.pname}-typeface-${variant}-${finalAttrs.version}.zip";
     sha256 = "17cqpql8zvakczvjhbzp6mgxvr137av2nik53p0ylk6gwjlqklv1";
     message = ''
       This file needs to be manually downloaded from Berkely Graphics
@@ -24,6 +24,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       nix-prefetch-url --type sha256 file://\$PWD/${name}
     '';
   };
+
+  outputs = [ "out" "web" "variable" "variableweb" ];
 
   nativeBuildInputs = [
     unzip

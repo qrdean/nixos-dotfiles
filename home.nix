@@ -37,7 +37,7 @@ in
   programs.ghostty = {
     enable = true;
     settings = {
-      font-size = 17;
+      font-size = 14;
       font-family = "Berkeley Mono";
       font-family-bold = "Berkeley Mono Bold";
       font-family-bold-italic = "Berkeley Mono Bold Italic";
