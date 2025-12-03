@@ -265,3 +265,6 @@ vim.lsp.enable('jdtls')
 
 vim.lsp.config('elixirls', {})
 vim.lsp.enable('elixirls')
+
+vim.lsp.config('nil_ls', {})
+vim.lsp.enable('nil_ls')

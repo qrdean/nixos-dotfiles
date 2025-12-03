@@ -2,13 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -79,7 +84,10 @@
   users.users.qdean = {
     isNormalUser = true;
     description = "qdean";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
@@ -94,6 +102,39 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    berkeley-mono = pkgs.callPackage ./berkeley-mono.nix { };
+  };
+
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    lib.elem (lib.getName pkg) [
+      "berkeley-mono"
+    ];
+
+  fonts = {
+    packages = with pkgs; [
+      berkeley-mono
+      julia-mono
+    ];
+    fontconfig.defaultFonts = {
+      monospace = [
+        "Berkeley Mono"
+        "JuliaMono"
+      ];
+    };
+    # localConf = builtins.writeFile "fonts.xml" /* xml */ ''
+    #   <?xml version="1.0"?>
+    #   <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+    #   <fontconfig>
+    #      <match target="pattern">
+    #         <test qual="any" name="family" compare="eq"><string>Berkeley Mono</string></test>
+    #         <edit name="family" mode="assign" binding="same"><string>JuliaMono</string></edit>
+    #      </match>
+    #   </fontconfig>
+    # '';
+  };
+
   # Gaming/graphics related configurations
   hardware.graphics.enable = true;
   # hardware.opengl = {
@@ -102,7 +143,7 @@
   #   driSupport32Bit = true;
   # };
   #
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.xone.enable = true;
   hardware.xpad-noone.enable = true;
 
@@ -117,6 +158,7 @@
     wget
     git
     ghostty
+    btop
 
     ## gaming ##
     mangohud
@@ -135,8 +177,7 @@
 
   # protonup steam compat tools
   environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
-      "\${HOME}/.steam/root/compatibilitytools.d";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -158,7 +199,10 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
