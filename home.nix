@@ -50,6 +50,11 @@ in
     recursive = true;
   };
 
+  xdg.configFile."niri" = {
+    source = create_symlink "${dotfiles}/niri";
+    recursive = true;
+  };
+
   home.packages = with pkgs; [
     # Programming
     neovim
@@ -64,7 +69,10 @@ in
     nil
     lua-language-server
     gopls
+
+    # Game Dev
     godot
+    blender
 
     # cli
     fastfetch
