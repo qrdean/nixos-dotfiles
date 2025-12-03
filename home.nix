@@ -54,11 +54,6 @@ in
     gopls
 
     fastfetch
+    equibop
   ];
-
-  # protonup steam compat tools
-  # environment.sessionVariables = {
-  #   STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
-  #     "\${HOME}/.steam/root/compatibilitytools.d";
-  # };
 }
