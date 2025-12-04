@@ -179,9 +179,9 @@
     # niri needs
     xwayland-satellite
     fuzzel
-    mako
-    waybar
-    swaylock
+    swaybg
+    pavucontrol
+    # waybar
   ];
 
   # protonup steam compat tools
