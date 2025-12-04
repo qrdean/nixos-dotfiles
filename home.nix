@@ -36,6 +36,7 @@ in
 
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
   };
 
   programs.ghostty = {
@@ -47,6 +48,15 @@ in
       font-family-bold-italic = "Berkeley Mono Bold Italic";
       font-family-italic = "Berkeley Mono Italic";
     };
+  };
+
+  programs.lazygit = {
+    enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.swaylock = {
@@ -73,7 +83,10 @@ in
       output = [ "DP-3" ];
       modules-left = [ "niri/window" ];
       modules-center = [ "niri/workspaces" ];
-      modules-right = [ "pulseaudio" "clock" ];
+      modules-right = [
+        "pulseaudio"
+        "clock"
+      ];
       "pulseaudio" = {
         "format" = "{volume}% {icon}";
         "on-click" = "pavucontrol";
@@ -440,6 +453,8 @@ in
     nodejs
     clang
     go
+    lazygit
+    zoxide
 
     # Language Servers
     nil
