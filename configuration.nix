@@ -125,16 +125,6 @@
         "JuliaMono"
       ];
     };
-    # localConf = builtins.writeFile "fonts.xml" /* xml */ ''
-    #   <?xml version="1.0"?>
-    #   <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-    #   <fontconfig>
-    #      <match target="pattern">
-    #         <test qual="any" name="family" compare="eq"><string>Berkeley Mono</string></test>
-    #         <edit name="family" mode="assign" binding="same"><string>JuliaMono</string></edit>
-    #      </match>
-    #   </fontconfig>
-    # '';
   };
 
   # Gaming/graphics related configurations
@@ -181,7 +171,6 @@
     fuzzel
     swaybg
     pavucontrol
-    # waybar
   ];
 
   # protonup steam compat tools
@@ -191,16 +180,18 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+  services.pcscd.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -457,6 +457,6 @@ in
     equibop
     xivlauncher
 
-    # yubioath-flutter figure out pcscd
+    yubioath-flutter
   ];
 }
