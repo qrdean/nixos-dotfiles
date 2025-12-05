@@ -382,6 +382,17 @@ window-rule {
     open-on-workspace "chat"
 }
 
+window-rule {
+    match app-id=r#"pavucontrol"#
+
+    open-floating true
+    default-floating-position x=30 y=15 relative-to="top-right"
+    default-column-width {proportion 0.25;}
+    default-window-height { proportion 0.4; }
+
+    opacity 0.9
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
