@@ -54,6 +54,7 @@ in
       font-family-bold = "Berkeley Mono Bold";
       font-family-bold-italic = "Berkeley Mono Bold Italic";
       font-family-italic = "Berkeley Mono Italic";
+      theme = "Kanagawa Dragon";
     };
   };
 
