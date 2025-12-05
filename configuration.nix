@@ -151,6 +151,7 @@
     git
     ghostty
     btop
+    libnotify
 
     ## gaming ##
     mangohud

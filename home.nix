@@ -12,6 +12,13 @@ in
 
   services.mako = {
     enable = true;
+    settings = {
+      background-color = "#181616";
+      border-color = "#c5c9c5";
+      border-radius = 5;
+      default-timeout = 10000;
+      font = "Berkeley Mono 14";
+    };
   };
 
   programs.zsh = {
@@ -81,15 +88,22 @@ in
       margin-right = 4;
       height = 30;
       output = [ "DP-3" ];
-      modules-left = [ "niri/window" ];
-      modules-center = [ "niri/workspaces" ];
+      modules-left = [ "niri/workspaces" ];
+      modules-center = [ "niri/window" "clock" ];
       modules-right = [
         "pulseaudio"
-        "clock"
+        "tray"
       ];
       "pulseaudio" = {
         "format" = "{volume}% {icon}";
         "on-click" = "pavucontrol";
+      };
+      "clock" = {
+        "tooltime-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        "format-alt" = "{:%Y-%m-%d}";
+      };
+      "tray" = {
+        "spacing" = 10;
       };
     };
     style = ''
@@ -101,11 +115,11 @@ in
       }
 
       window#waybar {
-          background: transparent;
+          background: #181616;
           /* background-color: rgba(30, 30, 46, 0.5); */
           /* border-bottom: 2px solid rgba(147, 153, 178, 0.5); */
           /* border: 1px solid rgba(166, 173, 200, 1.0); */
-          color: #ffffff;
+          color: #c8c093;
           /* transition-property: background-color; */
           /* transition-duration: .5s; */
       }
@@ -154,7 +168,7 @@ in
       #workspaces button {
           padding: 0 5px;
           background-color: transparent;
-          color: #ffffff;
+          color: #c5c9c5;
       }
 
       #workspaces button:hover {
@@ -162,12 +176,13 @@ in
       }
 
       #workspaces button.focused {
-          background-color: #64727D;
+          background-color: #8ea4a2;
           box-shadow: inset 0 -3px #ffffff;
+          color: #0d0c0c;
       }
 
       #workspaces button.urgent {
-          background-color: #eb4d4b;
+          background-color: #c4746e;
       }
 
       #mode {
@@ -213,8 +228,9 @@ in
       }
 
       #clock {
-          /* background-color: #64727D; */
+          background-color: #8a9a7b;
           font-weight: bold;
+          color: #0d0c0c;
           /* background-color: rgba(0, 0, 0, 0.3); */
           /* border-radius: 99px; */
       }
@@ -321,13 +337,13 @@ in
       }
 
       #pulseaudio {
-          background-color: #f1c40f;
+          background-color: #c4b28a;
           color: #000000;
       }
 
       #pulseaudio.muted {
-          background-color: #90b1b1;
-          color: #2a5c45;
+          background-color: #8a9a7b;
+          color: #87a987;
       }
 
       #wireplumber {

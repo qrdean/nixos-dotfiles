@@ -29,6 +29,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
   },
+  'norcalli/nvim-colorizer.lua',
 
   'nvim-lua/plenary.nvim',
   'nvim-lua/popup.nvim',

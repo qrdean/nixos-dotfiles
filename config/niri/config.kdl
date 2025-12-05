@@ -297,7 +297,7 @@ spawn-at-startup "swaybg" "-c" "#0f0f0f"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -326,6 +326,13 @@ animations {
     slowdown 0.3
 }
 
+workspace "main"
+workspace "gaming"
+workspace "chat" {
+    open-on-output "HDMI-A-1"
+}
+
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
@@ -349,6 +356,32 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id=r#"steam$"#
+
+    open-maximized true
+    open-on-workspace "gaming"
+    focus-ring {
+        off
+    }
+}
+
+window-rule {
+    match app-id=r#"ffxiv"#
+
+    open-maximized true
+    open-on-workspace "gaming"
+    focus-ring {
+        off
+    }
+}
+
+window-rule {
+    match app-id=r#"equibop"#
+
+    open-on-workspace "chat"
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -363,9 +396,14 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
+window-rule {
+    geometry-corner-radius 6
     clip-to-geometry true
+}
+
+/-cursor {
+    hide-when-typing
+    hide-after-inactive-ms 5000
 }
 
 overview {
