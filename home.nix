@@ -481,6 +481,7 @@ in
     # Game Dev
     godot
     blender
+    ardour
 
     # cli
     fastfetch
@@ -490,5 +491,6 @@ in
     xivlauncher
 
     yubioath-flutter
+    keymapp
   ];
 }
