@@ -473,6 +473,8 @@ in
     lazygit
     zoxide
 
+    inkscape
+
     # Language Servers
     nil
     lua-language-server
@@ -482,6 +484,7 @@ in
     godot
     blender
     ardour
+    audacity
 
     # cli
     fastfetch

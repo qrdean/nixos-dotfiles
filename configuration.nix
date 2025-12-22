@@ -141,12 +141,6 @@
 
   # Gaming/graphics related configurations
   hardware.graphics.enable = true;
-  # hardware.opengl = {
-  #   enable = true;
-  #   driSupport = true;
-  #   driSupport32Bit = true;
-  # };
-  #
   services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.xone.enable = true;
   hardware.xpad-noone.enable = true;
@@ -179,6 +173,10 @@
     winetricks
     lutris
     xdg-desktop-portal
+
+    #audio
+    sox
+    mplayer
 
     # niri needs
     xwayland-satellite
