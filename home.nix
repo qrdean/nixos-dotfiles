@@ -472,6 +472,9 @@ in
     go
     lazygit
     zoxide
+    rustup
+    dotnet-sdk
+    scons
 
     inkscape
 
