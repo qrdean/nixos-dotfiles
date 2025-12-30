@@ -183,6 +183,9 @@
     fuzzel
     swaybg
     pavucontrol
+
+    # not working properly
+    # godotPackages.export-template
   ];
 
   # protonup steam compat tools

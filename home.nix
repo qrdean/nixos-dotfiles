@@ -461,6 +461,16 @@ in
     recursive = true;
   };
 
+  # godot
+  home.file.".local/share/godot/export_templates/4.5.1.stable" = {
+    source = create_symlink "${config.home.homeDirectory}/Downloads/templates";
+  };
+  # home.file.".local/share/godot/export_templates/${builtins.replaceStrings [ "-" ] [ "." ] pkgs.godot_4-export-templates-bin.version}" = {
+  #   source = pkgs.godot_4-export-templates-bin;
+  #   recursive = true;
+  # };
+  # home.file.".local/".source = pkgs.godot_4-export-templates-bin;
+
   home.packages = with pkgs; [
     # Programming
     neovim
