@@ -6,6 +6,7 @@
   config,
   pkgs,
   lib,
+  helium,
   ...
 }:
 
@@ -187,7 +188,7 @@
     pavucontrol
 
     google-chrome
-
+    helium.packages.${system}.default
     # not working properly
     # godotPackages.export-template
   ];
