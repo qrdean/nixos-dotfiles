@@ -58,6 +58,8 @@ in
     };
   };
 
+  programs.librewolf.enable = true;
+
   programs.lazygit = {
     enable = true;
   };
@@ -483,7 +485,8 @@ in
     lazygit
     zoxide
     rustup
-    dotnet-sdk
+    # dotnet-sdk
+    dotnet-sdk_10
     scons
 
     inkscape

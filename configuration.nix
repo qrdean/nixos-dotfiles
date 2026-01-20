@@ -159,6 +159,8 @@
     ghostty
     btop
     libnotify
+    unzip
+    ilspycmd
 
     ## gaming ##
     mangohud
@@ -183,6 +185,8 @@
     fuzzel
     swaybg
     pavucontrol
+
+    google-chrome
 
     # not working properly
     # godotPackages.export-template
