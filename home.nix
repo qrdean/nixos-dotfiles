@@ -69,6 +69,15 @@ in
     enableZshIntegration = true;
   };
 
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+    ];
+  };
+
   programs.swaylock = {
     enable = true;
     settings = {
@@ -511,5 +520,6 @@ in
 
     yubioath-flutter
     keymapp
+    krita
   ];
 }
