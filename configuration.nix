@@ -117,24 +117,24 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   berkeley-mono = pkgs.callPackage ./berkeley-mono.nix { };
-  # };
+  nixpkgs.config.packageOverrides = pkgs: {
+    berkeley-mono = pkgs.callPackage ./berkeley-mono.nix { };
+  };
 
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     lib.elem (lib.getName pkg) [
-      # "berkeley-mono"
+      "berkeley-mono"
     ];
 
   fonts = {
     packages = with pkgs; [
-      # berkeley-mono
+      berkeley-mono
       julia-mono
     ];
     fontconfig.defaultFonts = {
       monospace = [
-        # "Berkeley Mono"
+        "Berkeley Mono"
         "JuliaMono"
       ];
     };
