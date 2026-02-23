@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "helium": {
+    "helium-55e98df": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -18,6 +18,7 @@
       "original": {
         "owner": "vikingnope",
         "repo": "helium-browser-nix-flake",
+        "rev": "55e98df9fdaf731667d0667f64b9dda0fbbdbe14",
         "type": "github"
       }
     },
@@ -28,11 +29,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769580047,
-        "narHash": "sha256-tNqCP/+2+peAXXQ2V8RwsBkenlfWMERb+Uy6xmevyhM=",
+        "lastModified": 1771744638,
+        "narHash": "sha256-EDLi+YAsEEAmMeZe1v6GccuGRbCkpSZp/+A6g+pivR8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "366d78c2856de6ab3411c15c1cb4fb4c2bf5c826",
+        "rev": "cb6c151f5c9db4df0b69d06894dc8484de1f16a0",
         "type": "github"
       },
       "original": {
@@ -44,11 +45,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1769598131,
-        "narHash": "sha256-e7VO/kGLgRMbWtpBqdWl0uFg8Y2XWFMdz0uUJvlML8o=",
+        "lastModified": 1771714954,
+        "narHash": "sha256-nhZJPnBavtu40/L2aqpljrfUNb2rxmWTmSjK2c9UKds=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fa83fd837f3098e3e678e6cf017b2b36102c7211",
+        "rev": "afbbf774e2087c3d734266c22f96fca2e78d3620",
         "type": "github"
       },
       "original": {
@@ -59,7 +60,7 @@
     },
     "root": {
       "inputs": {
-        "helium": "helium",
+        "helium-55e98df": "helium-55e98df",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

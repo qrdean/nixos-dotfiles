@@ -6,7 +6,7 @@
   config,
   pkgs,
   lib,
-  helium,
+  helium-55e98df,
   ...
 }:
 
@@ -107,6 +107,7 @@
     packages = with pkgs; [
       kdePackages.kate
       kdePackages.xdg-desktop-portal-kde
+      kdePackages.okular
       # aseprite
     ];
   };
@@ -188,7 +189,9 @@
     pavucontrol
 
     google-chrome
-    helium.packages.${system}.default
+    helium-55e98df.packages.${stdenv.hostPlatform.system}.default
+
+    nfs-utils
     # not working properly
     # godotPackages.export-template
   ];
@@ -212,6 +215,10 @@
   services.openssh.enable = true;
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
+
+  # nfs support
+  boot.supportedFilesystems = ["nfs"];
+  services.rpcbind.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
