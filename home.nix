@@ -514,7 +514,8 @@ in
     gopls
 
     # Game Dev
-    godot
+    godotPackages_4_6.godot
+    # godot
     blender
     ardour
     audacity
