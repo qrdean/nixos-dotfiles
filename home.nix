@@ -10,6 +10,13 @@ in
   home.homeDirectory = "/home/qdean";
   home.stateVersion = "25.05";
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = "okularApplication_pdf.desktop";
+    };
+  };
+
   services.mako = {
     enable = true;
     settings = {
@@ -493,10 +500,11 @@ in
     go
     lazygit
     zoxide
-    rustup
+    # rustup
     # dotnet-sdk
     dotnet-sdk_10
     scons
+    # nfs-utils
 
     inkscape
 
@@ -521,5 +529,8 @@ in
     yubioath-flutter
     keymapp
     krita
+
+    # video editing
+    kdePackages.kdenlive
   ];
 }
