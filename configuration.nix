@@ -17,8 +17,30 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    windows = {
+      "windows" =
+        let
+          boot-drive = "HD1a65535a2";
+        in
+        {
+          title = "Windows";
+          efiDeviceHandle = boot-drive;
+          sortKey = "y_windows";
+        };
+    };
+    edk2-uefi-shell.enable = true;
+    edk2-uefi-shell.sortKey = "z_edk2";
+  };
+  # boot.loader.grub = {
+  #   enable = true;
+  #   devices = ["nodev"];
+  #   efiSupport = true;
+  #   useOSProber = true;
+  # };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -217,7 +239,7 @@
   services.pcscd.enable = true;
 
   # nfs support
-  boot.supportedFilesystems = ["nfs"];
+  boot.supportedFilesystems = [ "nfs" ];
   services.rpcbind.enable = true;
 
   # Open ports in the firewall.
