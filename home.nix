@@ -533,5 +533,8 @@ in
 
     # video editing
     kdePackages.kdenlive
+
+    lmstudio
+    opencode
   ];
 }
