@@ -27,3 +27,15 @@ require 'nvim-treesitter.configs'.setup {
     }
   }
 }
+
+-- new
+-- local ensure_installed = { "vimdoc", "python", "bash", "javascript", "go", "java", "typescript", "lua", "rust",
+--   "gdscript", "godot_resource", "slint", "c_sharp", "odin", "zig", "markdown", "c", "cpp" }
+-- local _treesitter = require("nvim-treesitter")
+-- _treesitter.setup()
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = ensure_installed,
+--   callback = function(event)
+--     vim.treesitter.start()
+--   end
+-- })
