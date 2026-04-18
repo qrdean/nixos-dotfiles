@@ -185,6 +185,7 @@
     libnotify
     unzip
     ilspycmd
+    wl-clipboard
 
     ## gaming ##
     mangohud

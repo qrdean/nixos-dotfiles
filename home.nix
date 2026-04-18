@@ -489,6 +489,7 @@ in
   # };
   # home.file.".local/".source = pkgs.godot_4-export-templates-bin;
 
+
   home.packages = with pkgs; [
     # Programming
     neovim
@@ -512,6 +513,7 @@ in
     nil
     lua-language-server
     gopls
+    clang-tools
 
     # Game Dev
     godotPackages_4_6.godot
@@ -519,6 +521,7 @@ in
     blender
     ardour
     audacity
+    musescore
 
     # cli
     fastfetch
@@ -526,6 +529,8 @@ in
     # Programs
     equibop
     xivlauncher
+    runelite
+    bolt-launcher
 
     yubioath-flutter
     keymapp
