@@ -528,6 +528,7 @@ in
 
     # Programs
     equibop
+    discord-canary
     xivlauncher
     runelite
     bolt-launcher
