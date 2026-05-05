@@ -483,6 +483,10 @@ in
   home.file.".local/share/godot/export_templates/4.5.1.stable" = {
     source = create_symlink "${config.home.homeDirectory}/Downloads/templates";
   };
+
+  home.file.".local/share/godot/export_templates/4.6.stable" = {
+    source = create_symlink "${config.home.homeDirectory}/Downloads/godot_v4.6.2_templates/templates";
+  };
   # home.file.".local/share/godot/export_templates/${builtins.replaceStrings [ "-" ] [ "." ] pkgs.godot_4-export-templates-bin.version}" = {
   #   source = pkgs.godot_4-export-templates-bin;
   #   recursive = true;

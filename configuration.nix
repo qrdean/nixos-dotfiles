@@ -186,6 +186,9 @@
     unzip
     ilspycmd
     wl-clipboard
+    just
+    just-lsp
+    # tree-sitter-grammars.tree-sitter-just
 
     ## gaming ##
     mangohud
@@ -210,6 +213,8 @@
     fuzzel
     swaybg
     pavucontrol
+
+    emacs
 
     google-chrome
     helium-55e98df.packages.${stdenv.hostPlatform.system}.default
