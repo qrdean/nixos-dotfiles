@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
@@ -108,7 +113,10 @@ in
       height = 30;
       output = [ "DP-3" ];
       modules-left = [ "niri/workspaces" ];
-      modules-center = [ "niri/window" "clock" ];
+      modules-center = [
+        "niri/window"
+        "clock"
+      ];
       modules-right = [
         "pulseaudio"
         "tray"
@@ -493,58 +501,62 @@ in
   # };
   # home.file.".local/".source = pkgs.godot_4-export-templates-bin;
 
+  home.packages =
+    (with pkgs; [
+      # Programming
+      # neovim
+      fzf
+      ripgrep
+      nixpkgs-fmt
+      nodejs
+      clang
+      go
+      lazygit
+      zoxide
+      # rustup
+      # dotnet-sdk
+      dotnet-sdk_10
+      scons
+      # nfs-utils
 
-  home.packages = with pkgs; [
-    # Programming
-    neovim
-    fzf
-    ripgrep
-    nixpkgs-fmt
-    nodejs
-    clang
-    go
-    lazygit
-    zoxide
-    # rustup
-    # dotnet-sdk
-    dotnet-sdk_10
-    scons
-    # nfs-utils
+      inkscape
 
-    inkscape
+      # Language Servers
+      nil
+      lua-language-server
+      gopls
+      clang-tools
 
-    # Language Servers
-    nil
-    lua-language-server
-    gopls
-    clang-tools
+      # Game Dev
+      godotPackages_4_6.godot
+      # godot
+      blender
+      ardour
+      audacity
+      musescore
 
-    # Game Dev
-    godotPackages_4_6.godot
-    # godot
-    blender
-    ardour
-    audacity
-    musescore
+      # cli
+      fastfetch
 
-    # cli
-    fastfetch
+      # Programs
+      equibop
+      discord-canary
+      xivlauncher
+      runelite
+      bolt-launcher
 
-    # Programs
-    equibop
-    discord-canary
-    xivlauncher
-    runelite
-    bolt-launcher
+      yubioath-flutter
+      keymapp
+      krita
 
-    yubioath-flutter
-    keymapp
-    krita
+      # video editing
+      kdePackages.kdenlive
 
-    # video editing
-    kdePackages.kdenlive
+      lmstudio
+      opencode
+    ])
 
-    lmstudio
-    opencode
-  ];
+    ++ (with pkgs-unstable; [
+      neovim
+    ]);
 }
