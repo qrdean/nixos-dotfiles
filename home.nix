@@ -37,6 +37,7 @@ in
     enable = true;
     shellAliases = {
       hey = "echo hey there";
+      nvimtest = "NVIM_APPNAME=nvim-testing nvim";
     };
     initContent = ''
       eval "$(starship init zsh)"
@@ -50,6 +51,8 @@ in
       user.name = "quinton dean";
       init.defaultBranch = "main";
       pull.rebase = true;
+      difftool.nvim_difftool.cmd = "nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"";
+      diff.tool = "nvim_difftool";
     };
   };
 
@@ -484,6 +487,11 @@ in
 
   xdg.configFile."niri" = {
     source = create_symlink "${dotfiles}/niri";
+    recursive = true;
+  };
+
+  xdg.configFile."nvim-testing" = {
+    source = create_symlink "${dotfiles}/nvim-testing";
     recursive = true;
   };
 

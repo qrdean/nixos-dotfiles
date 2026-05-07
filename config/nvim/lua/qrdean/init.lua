@@ -1,6 +1,7 @@
 require("qrdean.set")
 require("qrdean.remap")
 require("lazy-plugins")
+-- require("something")
 
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 require("mason").setup({
