@@ -33,7 +33,7 @@ require("lazy").setup({
 
   'nvim-lua/plenary.nvim',
   'nvim-lua/popup.nvim',
-  'nvim-telescope/telescope.nvim',
+  -- 'nvim-telescope/telescope.nvim',
   {
     "ibhagwan/fzf-lua",
     -- optional for icon support
@@ -76,8 +76,15 @@ require("lazy").setup({
 
   'quangnguyen30192/cmp-nvim-tags',
 
-  { 'nvim-treesitter/nvim-treesitter',            build = ':TSUpdate' },
-  { 'nvim-treesitter/nvim-treesitter-textobjects' },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
+    branch = 'main',
+    lazy = false,
+    build = ':TSUpdate'
+  },
+
+  -- { 'nvim-treesitter/nvim-treesitter-textobjects' },
 
   { 'nvim-lualine/lualine.nvim' },
   {

@@ -219,6 +219,8 @@
     google-chrome
     helium-55e98df.packages.${stdenv.hostPlatform.system}.default
 
+    # tree-sitter
+
     nfs-utils
     # not working properly
     # godotPackages.export-template

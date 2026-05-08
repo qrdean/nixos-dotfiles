@@ -38,6 +38,7 @@ in
     shellAliases = {
       hey = "echo hey there";
       nvimtest = "NVIM_APPNAME=nvim-testing nvim";
+      nvimsock = "nvim --listen /tmp/nvim.sock";
     };
     initContent = ''
       eval "$(starship init zsh)"
@@ -566,5 +567,6 @@ in
 
     ++ (with pkgs-unstable; [
       neovim
+      tree-sitter
     ]);
 }
