@@ -1,5 +1,7 @@
-vim.api.nvim_create_autocmd("BufWinEnter", {
+vim.api.nvim_create_autocmd({"BufEnter","BufWinEnter"}, {
   pattern = "*.gd",
-  command = "set filetype=gdscript",
+  callback = function(event)
+    vim.cmd('set filetype=gdscript')
+    vim.treesitter.start(event.buf)
+  end
 })
-

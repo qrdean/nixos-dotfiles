@@ -29,13 +29,15 @@
 -- }
 
 -- new
+-- "gdscript" was fighting with the ftplugin so moved it out
 local ensure_installed = { "vimdoc", "python", "bash", "javascript", "go", "java", "typescript", "lua", "rust",
-  "gdscript", "godot_resource", "slint", "c_sharp", "odin", "zig", "markdown", "c", "cpp" }
+  "godot_resource", "c_sharp", "odin", "zig", "markdown", "c", "cpp" }
 local _treesitter = require("nvim-treesitter")
+_treesitter.install(ensure_installed)
 _treesitter.setup()
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = ensure_installed,
   callback = function(event)
-    vim.treesitter.start()
+    vim.treesitter.start(event.buf)
   end
 })
