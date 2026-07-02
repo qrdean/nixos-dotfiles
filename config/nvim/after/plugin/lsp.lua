@@ -261,7 +261,7 @@ vim.lsp.enable('ols')
 vim.lsp.config('zls', {})
 vim.lsp.enable('zls')
 
-vim.lsp.enable('jdtls')
+-- vim.lsp.enable('jdtls')
 
 vim.lsp.config('elixirls', {
   cmd = { 'elixir-ls' }
@@ -275,3 +275,6 @@ vim.lsp.config('just', {
   cmd = { 'just-lsp' }
 })
 vim.lsp.enable('just')
+
+vim.lsp.config('ts_ls', {})
+vim.lsp.enable('ts_ls')

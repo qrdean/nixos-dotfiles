@@ -188,6 +188,7 @@
     wl-clipboard
     just
     just-lsp
+    zip
     # tree-sitter-grammars.tree-sitter-just
 
     ## gaming ##
@@ -216,10 +217,14 @@
 
     emacs
 
+    chromium
+
     google-chrome
     helium-55e98df.packages.${stdenv.hostPlatform.system}.default
 
     # tree-sitter
+
+    ledger
 
     nfs-utils
     # not working properly

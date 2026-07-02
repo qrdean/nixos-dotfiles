@@ -12,17 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  'sheerun/vim-polyglot',
+  -- 'sheerun/vim-polyglot',
 
-  {
-    "wnkz/monoglow.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  { 'luisiacc/gruvbox-baby',           branch = 'main' },
-  { 'nyoom-engineering/oxocarbon.nvim' },
-  { 'catppuccin/nvim',                 name = 'catppuccin', priority = 1000 },
+  -- {
+  --   "wnkz/monoglow.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  -- },
+  -- { 'luisiacc/gruvbox-baby',           branch = 'main' },
+  -- { 'nyoom-engineering/oxocarbon.nvim' },
+  -- { 'catppuccin/nvim',                 name = 'catppuccin', priority = 1000 },
   { 'rebelot/kanagawa.nvim' },
   {
     "webhooked/kanso.nvim",
@@ -32,7 +32,7 @@ require("lazy").setup({
   'norcalli/nvim-colorizer.lua',
 
   'nvim-lua/plenary.nvim',
-  'nvim-lua/popup.nvim',
+  -- 'nvim-lua/popup.nvim',
   -- 'nvim-telescope/telescope.nvim',
   {
     "ibhagwan/fzf-lua",
@@ -60,8 +60,8 @@ require("lazy").setup({
   'tpope/vim-dadbod',
   'kristijanhusak/vim-dadbod-ui',
 
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
+  -- 'williamboman/mason.nvim',
+  -- 'williamboman/mason-lspconfig.nvim',
   -- 'Hoffs/omnisharp-extended-lsp.nvim',
 
   'neovim/nvim-lspconfig',
@@ -93,7 +93,7 @@ require("lazy").setup({
   },
 
   'folke/zen-mode.nvim',
-  'folke/twilight.nvim',
+  -- 'folke/twilight.nvim',
   { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   {
@@ -135,7 +135,7 @@ require("lazy").setup({
     opts = {},
   },
 
-  'mfussenegger/nvim-jdtls',
+  -- 'mfussenegger/nvim-jdtls',
 
   'habamax/vim-godot',
   {

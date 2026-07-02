@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end
 })
 
-
+vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]])
 
 -- Copilot
 -- keymap('i', '<C-Bslash>', '<cmd>call copilot#Suggest()<Cr>', opts)

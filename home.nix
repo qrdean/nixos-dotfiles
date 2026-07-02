@@ -527,14 +527,17 @@ in
       dotnet-sdk_10
       scons
       # nfs-utils
+      odin
 
       inkscape
 
       # Language Servers
       nil
+      ols
       lua-language-server
       gopls
       clang-tools
+      typescript-language-server
 
       # Game Dev
       godotPackages_4_6.godot
@@ -550,7 +553,6 @@ in
       # Programs
       equibop
       discord-canary
-      xivlauncher
       runelite
       bolt-launcher
 
