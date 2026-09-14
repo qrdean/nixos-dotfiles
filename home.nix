@@ -115,7 +115,7 @@ in
       margin-left = 4;
       margin-right = 4;
       height = 30;
-      output = [ "DP-3" ];
+      output = [ "DP-3" "HDMI-A-1" ];
       modules-left = [ "niri/workspaces" ];
       modules-center = [
         "niri/window"
@@ -538,9 +538,12 @@ in
       gopls
       clang-tools
       typescript-language-server
+      roslyn-ls
 
       # Game Dev
-      godotPackages_4_6.godot
+      # godotPackages_4_6.godot
+      godotPackages_4_7.godot
+      godot_4_7-mono
       # godot
       blender
       ardour

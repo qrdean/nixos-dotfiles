@@ -104,6 +104,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
@@ -114,6 +115,12 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  # enable docker virtualisation
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -128,7 +135,7 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
-      kdePackages.xdg-desktop-portal-kde
+      # kdePackages.xdg-desktop-portal-kde
       kdePackages.okular
       # aseprite
     ];
@@ -142,6 +149,7 @@
 
   nixpkgs.config.packageOverrides = pkgs: {
     berkeley-mono = pkgs.callPackage ./berkeley-mono.nix { };
+    usagi = pkgs.callPackage ./packages/usagi.nix { };
   };
 
   nixpkgs.config.allowUnfreePredicate =
@@ -174,6 +182,8 @@
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
 
+  environment.localBinInPath = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -204,6 +214,8 @@
     winetricks
     lutris
     xdg-desktop-portal
+    xdg-desktop-portal-wlr
+    usagi
 
     #audio
     sox

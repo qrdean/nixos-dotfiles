@@ -278,3 +278,6 @@ vim.lsp.enable('just')
 
 vim.lsp.config('ts_ls', {})
 vim.lsp.enable('ts_ls')
+
+vim.lsp.config('pylsp', {})
+vim.lsp.enable('pylsp')
