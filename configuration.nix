@@ -239,6 +239,8 @@
     ledger
 
     nfs-utils
+
+    ffmpeg-full
     # not working properly
     # godotPackages.export-template
   ];

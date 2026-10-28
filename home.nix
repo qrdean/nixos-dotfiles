@@ -567,11 +567,11 @@ in
       kdePackages.kdenlive
 
       lmstudio
-      opencode
     ])
 
     ++ (with pkgs-unstable; [
       neovim
       tree-sitter
+      opencode
     ]);
 }
