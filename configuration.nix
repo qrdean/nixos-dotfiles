@@ -44,6 +44,11 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hosts = {
+    "192.168.122.43" = [ "server.kubernetes.local" "server" ];
+    "192.168.122.44" = [ "node-0.kubernetes.local" "node-0" ];
+    "192.168.122.45" = [ "node-1.kubernetes.local" "node-1" ];
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -122,6 +127,8 @@
     setSocketVariable = true;
   };
 
+  virtualisation.libvirtd.enable = true;
+
   programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.qdean = {
@@ -131,6 +138,7 @@
       "networkmanager"
       "wheel"
       "plugdev"
+      "libvirtd"
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
@@ -200,6 +208,12 @@
     just-lsp
     zip
     # tree-sitter-grammars.tree-sitter-just
+
+    # virtualisation
+    libvirt
+    qemu
+    virt-manager
+    cloud-utils
 
     ## gaming ##
     mangohud
